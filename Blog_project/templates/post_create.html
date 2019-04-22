@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <section style="background: url({% static 'img/create_background.jpg' %}); background-size: cover; background-position: center center" class="hero">
+  <div class="col-6 offset-3 mb-5 mt-5">
+  <h3>{{ title }} an article.</h3>
+      {{ form.media }}
+      <form method="POST" action="." enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ form|crispy }}
+{#          {% csrf_token %}#}
+          <button class="btn btn-success" type="submit">Submit</button>
+      </form>
+  </div>
+    </section>
+{% endblock content %}

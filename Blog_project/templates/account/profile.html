@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div align="center"><h1>Welcome to Dream Blog</h1></div>
+    <br></br>
+
+<h3 class="offset-5">{{ request.user.username }}'s Profile</h3>
+
+{% endblock content %}
